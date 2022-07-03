@@ -32,4 +32,5 @@ jobs:
             pyinstaller -F sample.py
             docker build -t denken-solutions-canada .
             echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
-            docker push beinanwang/denken-solutions-canada
+            docker tag denken-solutions-canada beinanwang/denken-solutions-canada-python-developer
+            docker push beinanwang/denken-solutions-canada-python-developer
