@@ -9,8 +9,8 @@ class TestSample(unittest.TestCase):
         self.app.testing = True
 
     def test_status_code(self):
-        #response = self.app.get('/')
-        #self.assertEqual(response.status_code, 200)
+        response = self.app.get('/')
+        self.assertEqual(response.status_code, 200)
         self.assertEqual(200, 200)
 
 if __name__ == '__main__':
