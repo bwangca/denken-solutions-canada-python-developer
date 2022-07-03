@@ -13,6 +13,7 @@ class Database(ABC):
         #uri = config['MONGODB_URI']
         client = MongoClient('mongodb+srv://beinanwang:denkensolutionscanada@cluster0.rgvpjbi.mongodb.net/?retryWrites=true&w=majority')
         self.db = client[self.NAME]
+        print(self.db.list_collection_names())
 
 class HouseIndex(Database):
 
