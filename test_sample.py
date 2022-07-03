@@ -14,9 +14,9 @@ class TestSample(unittest.TestCase):
     # simple demo, the code used for local test is commented
     # out.
     def test_status_code(self):
-        #response = self.app.get('/')
-        #self.assertEqual(response.status_code, 200)
-        self.assertEqual(200, 200)
+        response = self.app.get('/')
+        self.assertEqual(response.status_code, 200)
+        #self.assertEqual(200, 200)
 
 if __name__ == '__main__':
     unittest.main()

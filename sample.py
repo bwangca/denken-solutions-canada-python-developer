@@ -8,7 +8,8 @@ from database import HouseIndex
 
 app = Flask(__name__)
 
-db = HouseIndex().db
+house_index = HouseIndex()
+db = house_index.db
 
 @app.route('/', methods=['GET'])
 def index():
