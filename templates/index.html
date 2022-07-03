@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Index{% endblock %}
+{% block content %}
+  <table id="data" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>House Index</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in cur %}
+        <tr>
+          <td>{{ item.date }}</td>
+          <td>{{ item.index }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    $(document).ready(function () {
+      $('#data').DataTable();
+    });
+  </script>
+{% endblock %}
