@@ -1,4 +1,5 @@
-python-dotenv
 flask
 pandas
 pymongo
+python-dotenv
+pyinstaller

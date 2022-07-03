@@ -17,11 +17,13 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Setup VirtualEnv
+          name: Install requirements
           command: |
             pip install --no-cache-dir -r requirements.txt
       - run:
           name: Run Tests
+          environment:
+            MONGODB_URI: $MONGODB_URI
           command: |
             python3 test_sample.py
       - setup_remote_docker:
