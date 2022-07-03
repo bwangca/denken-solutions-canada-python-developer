@@ -9,9 +9,9 @@ from collection import ChicagoHouseIndex
 class Database(ABC):
 
     def __init__(self):
-        #config = dotenv_values(".env")
-        #uri = config['MONGODB_URI']
-        client = MongoClient('mongodb+srv://beinanwang:denkensolutionscanada@cluster0.rgvpjbi.mongodb.net/?retryWrites=true&w=majority')
+        config = dotenv_values(".env")
+        uri = config['MONGODB_URI']
+        client = MongoClient(uri)
         self.db = client[self.NAME]
 
 class HouseIndex(Database):
