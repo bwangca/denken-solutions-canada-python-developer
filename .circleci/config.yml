@@ -30,6 +30,6 @@ jobs:
           name: Build and push Docker image
           command: |
             pyinstaller -F sample.py
-            docker build -t $IMAGE_NAME:$TAG .
+            docker build -t denken-solutions-canada .
             echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
             docker push beinanwang/$IMAGE_NAME:$TAG
