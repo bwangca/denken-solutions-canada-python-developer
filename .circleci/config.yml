@@ -24,8 +24,6 @@ jobs:
           environment:
             MONGODB_URI: $MONGODB_URI
           name: Run Tests
-            environment:
-              MONGODB_URI: $MONGODB_URI
           command: |
             python3 test_sample.py
       - setup_remote_docker:
