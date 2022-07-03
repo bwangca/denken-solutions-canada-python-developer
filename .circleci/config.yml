@@ -23,7 +23,7 @@ jobs:
       - run:
           name: Run Tests
           environment:
-            FLASK_APP: sample.py
+            MONGODB_URI: $MONGODB_URI
           command: |
             python3 test_sample.py
       - setup_remote_docker:
