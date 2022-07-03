@@ -1,11 +1,13 @@
-FROM python:3.10.4
+#syntax=docker/dockerfile:1
 
-RUN mkdir /opt/sample/
-WORKDIR /opt/sample/
+FROM python:3.8-slim-buster
 
-COPY requirements.txt .
-COPY dist/sample /opt/sample/
+WORKDIR /app
 
-EXPOSE 80
+COPY requirements.txt requirements.txt
 
-CMD [ "./sample" ]
+RUN pip3 install -r requirements.txt
+
+COPY . .
+
+CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
