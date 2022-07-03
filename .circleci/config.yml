@@ -21,10 +21,9 @@ jobs:
           command: |
             pip install --no-cache-dir -r requirements.txt
       - run:
-          environment:
-            MONGODB_URI: $MONGODB_URI
           name: Run Tests
           command: |
+            export MONGODB_URI=$MONGODB_URI
             python3 test_sample.py
       - setup_remote_docker:
           docker_layer_caching: true
